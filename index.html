@@ -9,20 +9,56 @@
 <body>
     <h1>Willkommen auf meiner Website</h1>
     
+    <!-- Benutzerregistrierung -->
+    <h2>Registrieren</h2>
+    <form id="registrationForm">
+        <label for="regUsername">Benutzername:</label>
+        <input type="text" id="regUsername" required>
+        <br>
+        <label for="regPassword">Passwort:</label>
+        <input type="password" id="regPassword" required>
+        <br>
+        <button type="button" onclick="registerUser()">Registrieren</button>
+    </form>
+
+    <!-- Benutzeranmeldung -->
+    <h2>Anmelden</h2>
+    <form id="loginForm">
+        <label for="loginUsername">Benutzername:</label>
+        <input type="text" id="loginUsername" required>
+        <br>
+        <label for="loginPassword">Passwort:</label>
+        <input type="password" id="loginPassword" required>
+        <br>
+        <button type="button" onclick="loginUser()">Anmelden</button>
+    </form>
+
     <script>
-        // Beispiel für eine AJAX-Anfrage an den Login-Endpunkt
-        fetch('http://localhost:3000/api/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                username: 'benutzer1',
-                password: 'passwort1'
-            })
-        })
-        .then(response => response.json())
-        .then(data => console.log(data));
+        // Beispiel für Benutzerverwaltung in JavaScript
+        const users = {};
+
+        function registerUser() {
+            const username = document.getElementById('regUsername').value;
+            const password = document.getElementById('regPassword').value;
+
+            if (!users[username]) {
+                users[username] = { password: password };
+                alert('Registrierung erfolgreich!');
+            } else {
+                alert('Benutzername bereits vergeben. Bitte wähle einen anderen.');
+            }
+        }
+
+        function loginUser() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            if (users[username] && users[username].password === password) {
+                alert('Anmeldung erfolgreich!');
+            } else {
+                alert('Falscher Benutzername oder Passwort.');
+            }
+        }
     </script>
 </body>
 </html>
