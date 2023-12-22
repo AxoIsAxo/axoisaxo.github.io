@@ -34,11 +34,27 @@
         button:hover {
             background-color: #45a049;
         }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
     </style>
 </head>
 <body>
     <h1>Account-Einstellungen</h1>
     <div id="userDisplay"></div>
+
+    <label for="email">E-Mail-Adresse:</label>
+    <input type="email" id="email" placeholder="E-Mail-Adresse eingeben">
+    <button type="button" onclick="setEmail()">E-Mail speichern</button>
 
     <script>
         // Versuche, einen angemeldeten Benutzer anzuzeigen, wenn die Seite geladen wird
@@ -58,6 +74,18 @@
 
         function getLoggedInUser() {
             return localStorage.getItem('loggedInUser');
+        }
+
+        function setEmail() {
+            const emailInput = document.getElementById('email');
+            const email = emailInput.value.trim();
+
+            if (email !== '') {
+                // Hier könntest du die E-Mail-Adresse speichern oder weiterverarbeiten
+                alert(`E-Mail-Adresse "${email}" wurde gespeichert!`);
+            } else {
+                alert('Bitte eine gültige E-Mail-Adresse eingeben.');
+            }
         }
     </script>
 </body>
