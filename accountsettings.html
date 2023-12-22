@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andere Seite</title>
+    <title>Account-Einstellungen</title>
     <style>
         body {
             display: flex;
@@ -37,9 +37,8 @@
     </style>
 </head>
 <body>
-    <h1>Andere Seite</h1>
+    <h1>Account-Einstellungen</h1>
     <div id="userDisplay"></div>
-    <button type="button" onclick="openAccountSettings()">Account-Einstellungen</button>
 
     <script>
         // Versuche, einen angemeldeten Benutzer anzuzeigen, wenn die Seite geladen wird
@@ -59,11 +58,6 @@
 
         function getLoggedInUser() {
             return localStorage.getItem('loggedInUser');
-        }
-
-        function openAccountSettings() {
-            // Hier könntest du zur Seite mit den Account-Einstellungen weiterleiten
-            alert('Account-Einstellungen öffnen');
         }
     </script>
 </body>
