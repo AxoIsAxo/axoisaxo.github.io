@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrierte Benutzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #userList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #userList li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registrierte Benutzer</h1>
+    <ul id="userList"></ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            displayUserList();
+        });
+
+        function displayUserList() {
+            // Annahme: Die Benutzernamen werden im Local Storage gespeichert
+            const userList = getUserListFromLocalStorage();
+
+            if (userList.length > 0) {
+                const userListElement = document.getElementById('userList');
+
+                userList.forEach(username => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = username;
+                    userListElement.appendChild(listItem);
+                });
+            } else {
+                alert('Keine registrierten Benutzer gefunden.');
+            }
+        }
+
+        function getUserListFromLocalStorage() {
+            // Hier solltest du die Art und Weise spezifizieren, wie die Benutzernamen gespeichert werden
+            // Beispiel: ['Benutzer1', 'Benutzer2', ...]
+            return JSON.parse(localStorage.getItem('userList')) || [];
+        }
+    </script>
+</body>
+</html>
