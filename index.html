@@ -1,6 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Website</title>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            checkPageExistence();
+        });
+
+        function checkPageExistence() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('HEAD', window.location.href, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 404) {
+                        window.location.href = 'error.html';
+                    }
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+    <!-- Der Inhalt deiner Hauptseite -->
+    <h1>Willkommen auf meiner Website!</h1>
+</body>
+</html>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
