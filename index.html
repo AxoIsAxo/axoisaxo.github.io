@@ -77,7 +77,7 @@
         <input type="password" id="loginPassword" required>
         <br>
         <button type="button" onclick="loginUser()">Anmelden</button>
-        <button type="button" onclick="openAccountPage()">Account</button>
+        <button type="button" onclick="openAccountSettings()">Account</button>
     </form>
 
     <script>
@@ -133,9 +133,9 @@
             return localStorage.getItem('loggedInUser');
         }
 
-        function openAccountPage() {
-            // Weiterleitung zur anderen Seite
-            window.location.href = 'otherpage.html';
+        function openAccountSettings() {
+            // Weiterleitung zur Seite mit den Account-Einstellungen
+            window.location.href = 'accountsettings.html';
         }
     </script>
 </body>
