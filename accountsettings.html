@@ -39,6 +39,8 @@
 <body>
     <h1>Account-Einstellungen</h1>
     <div id="userDisplay"></div>
+    
+    <button onclick="goBack()">Zurück</button>
 
     <script>
         // Versuche, einen angemeldeten Benutzer anzuzeigen, wenn die Seite geladen wird
@@ -58,6 +60,12 @@
 
         function getLoggedInUser() {
             return localStorage.getItem('loggedInUser');
+        }
+
+        function goBack() {
+            // Hier kannst du die Navigation zur vorherigen Seite implementieren
+            // Zum Beispiel: window.history.back();
+            alert('Hier sollte die Navigation zur vorherigen Seite implementiert werden.');
         }
     </script>
 </body>
