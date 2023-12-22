@@ -82,6 +82,9 @@
         const users = JSON.parse(localStorage.getItem('users')) || {};
         const userDisplay = document.getElementById('userDisplay');
 
+        // Versuche, einen angemeldeten Benutzer anzuzeigen, wenn die Seite geladen wird
+        displayLoggedInUser();
+
         function saveUsers() {
             localStorage.setItem('users', JSON.stringify(users));
         }
@@ -94,6 +97,7 @@
                 users[username] = { password: password };
                 saveUsers();
                 alert('Registrierung erfolgreich!');
+                displayLoggedInUser();
             } else {
                 alert('Benutzername bereits vergeben. Bitte wähle einen anderen.');
             }
@@ -113,6 +117,19 @@
 
         function displayUser(username) {
             userDisplay.textContent = `Angemeldet als: ${username}`;
+        }
+
+        function displayLoggedInUser() {
+            const loggedInUser = getLoggedInUser();
+            if (loggedInUser) {
+                displayUser(loggedInUser);
+            }
+        }
+
+        function getLoggedInUser() {
+            // Hier könntest du eine bessere Authentifizierung implementieren,
+            // z. B. Token-Überprüfung oder eine sichere Server-Authentifizierung
+            return localStorage.getItem('loggedInUser');
         }
     </script>
 </body>
