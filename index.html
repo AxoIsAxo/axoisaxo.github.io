@@ -5,9 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine Website</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin: 20px;
+        }
+
+        #userDisplay {
+            background-color: #eee;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Willkommen auf meiner Website</h1>
+    <div id="userDisplay"></div>
     
     <!-- Benutzerregistrierung -->
     <h2>Registrieren</h2>
@@ -34,8 +50,12 @@
     </form>
 
     <script>
-        // Beispiel für Benutzerverwaltung in JavaScript
-        const users = {};
+        const users = JSON.parse(localStorage.getItem('users')) || {};
+        const userDisplay = document.getElementById('userDisplay');
+
+        function saveUsers() {
+            localStorage.setItem('users', JSON.stringify(users));
+        }
 
         function registerUser() {
             const username = document.getElementById('regUsername').value;
@@ -43,6 +63,7 @@
 
             if (!users[username]) {
                 users[username] = { password: password };
+                saveUsers();
                 alert('Registrierung erfolgreich!');
             } else {
                 alert('Benutzername bereits vergeben. Bitte wähle einen anderen.');
@@ -54,10 +75,15 @@
             const password = document.getElementById('loginPassword').value;
 
             if (users[username] && users[username].password === password) {
+                displayUser(username);
                 alert('Anmeldung erfolgreich!');
             } else {
                 alert('Falscher Benutzername oder Passwort.');
             }
+        }
+
+        function displayUser(username) {
+            userDisplay.textContent = `Angemeldet als: ${username}`;
         }
     </script>
 </body>
