@@ -46,15 +46,9 @@ const config = {
     adminTeamPage: {
         leaders: [
             {
-                inGameName: "Astronavta",
+                inGameName: "AxoMan47",
                 rank: "Owner",
-                skinUrlOrPathToFile: "",
-                rankColor: "rgba(255, 3, 3, 1)"
-            },
-            {
-                inGameName: "Astronavta",
-                rank: "Owner",
-                skinUrlOrPathToFile: "",
+                skinUrlOrPathToFile: "https://www.minecraftskins.com/uploads/skins/2022/04/21/axo-20221882.png?v609",
                 rankColor: "rgba(255, 3, 3, 1)"
             },
             {
@@ -64,9 +58,9 @@ const config = {
                 rankColor: ""
             },
             {
-                inGameName: "Astronavta",
-                rank: "Moderator",
-                skinUrlOrPathToFile: "",
+                inGameName: "Pilziger",
+                rank: "Jr. Moderator",
+                skinUrlOrPathToFile: "https://www.minecraftskins.com/uploads/skins/2022/07/16/gaming-pilz-20587488.png?v609",
                 rankColor: ""
             }
         ],
