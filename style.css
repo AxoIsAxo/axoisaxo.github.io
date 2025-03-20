@@ -1,47 +1,50 @@
-/* Default: Dark mode */
+/* Default light theme */
+:root {
+  --background-color-light: rgba(255, 255, 255, 0.85);
+  --background-color-dark: rgba(20, 24, 31, 0.85);
+  --text-color-light: #1b1f2a;
+  --text-color-dark: #e0f7fa;
+  --button-bg-light: #00bcd4;
+  --button-bg-dark: #007e91;
+  --button-text: white;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background: url('images/background.jpg') no-repeat center center fixed;
   background-size: cover;
-  color: var(--text-color);
+  color: var(--text-color-light);
   transition: background-color 0.3s ease, color 0.3s ease;
   position: relative;
   min-height: 100vh;
+  margin: 0;
 }
 
-/* Light theme */
-body.light {
-  --background-color: rgba(255, 255, 255, 0.85);
-  --text-color: #1b1f2a;
-  --button-bg: #00bcd4;
-  --button-text: white;
-}
-
-/* Dark theme */
 body.dark {
-  --background-color: rgba(20, 24, 31, 0.85);
-  --text-color: #e0f7fa;
-  --button-bg: #007e91;
-  --button-text: white;
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
 }
 
-/* Default overlay for Dark Mode */
+body.light {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
 .overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(20, 24, 31, 0.6) 0%,
-    rgba(20, 24, 31, 0) 30%,
-    rgba(20, 24, 31, 0) 70%,
-    rgba(20, 24, 31, 0.6) 100%
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0) 70%,
+    rgba(255, 255, 255, 0.6) 100%
   );
   backdrop-filter: blur(3px); /* Stronger blur in dark mode */
   pointer-events: none;
   z-index: 0;
 }
 
-/* Light mode overlay (less blur) */
 body.light .overlay {
   background: linear-gradient(
     to bottom,
@@ -51,4 +54,60 @@ body.light .overlay {
     rgba(255, 255, 255, 0.6) 100%
   );
   backdrop-filter: blur(1px); /* Less blur in light mode */
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--text-color-dark);
+}
+
+p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background: var(--button-bg-light);
+  color: var(--button-text);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+}
+
+body.dark .cta-button {
+  background: var(--button-bg-dark);
+}
+
+.cta-button:hover {
+  background: #00acc1;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+footer {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  text-align: center;
+  color: var(--text-color-dark);
+  z-index: 1;
 }
