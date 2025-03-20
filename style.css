@@ -1,9 +1,89 @@
+/* Default light theme */
+:root {
+  --background-color: rgba(255, 255, 255, 0.85);
+  --text-color: #1b1f2a;
+  --button-bg: #00bcd4;
+  --button-text: white;
+}
+
+body.dark {
+  --background-color: rgba(20, 24, 31, 0.85);
+  --text-color: #e0f7fa;
+  --button-bg: #007e91;
+  --button-text: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-image: url("images/Playground.jpg");
-  background-size: cover; /* Or 'contain' depending on desired effect */
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh; /* Ensure the background covers the entire viewport height */
-  width: 100vw; /* Ensure it covers the entire viewport width */
-  margin: 0; /* Remove default body margins to ensure full coverage */
+  font-family: 'Segoe UI', sans-serif;
+  background: url('images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  min-height: 100vh;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--background-color);
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background: #00acc1;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+footer {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  text-align: center;
+  color: var(--text-color);
+  z-index: 1;
 }
