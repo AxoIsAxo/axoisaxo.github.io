@@ -1,4 +1,4 @@
-/* Default light theme */
+/* Theme variables */
 :root {
   --background-color-light: rgba(255, 255, 255, 0.85);
   --background-color-dark: rgba(20, 24, 31, 0.85);
@@ -9,6 +9,7 @@
   --button-text: white;
 }
 
+/* General body style */
 body {
   font-family: 'Segoe UI', sans-serif;
   background: url('images/background.png') no-repeat center center fixed;
@@ -30,15 +31,16 @@ body.light {
   color: var(--text-color-light);
 }
 
+/* Overlay blur effect */
 .overlay {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  backdrop-filter: blur(5px); /* Same blur in both modes */
+  backdrop-filter: blur(5px); /* Same blur for both modes */
 }
 
-/* ✅ Unchanged dark mode overlay */
+/* Dark mode overlay */
 body.dark .overlay {
   background: linear-gradient(
     to bottom,
@@ -49,7 +51,7 @@ body.dark .overlay {
   );
 }
 
-/* ✅ Light mode with lighter gradient */
+/* Light mode overlay */
 body.light .overlay {
   background: linear-gradient(
     to bottom,
@@ -60,6 +62,7 @@ body.light .overlay {
   );
 }
 
+/* Main content area */
 .content {
   position: relative;
   z-index: 1;
@@ -70,7 +73,6 @@ body.light .overlay {
 h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: var(--text-color-dark);
 }
 
 p {
@@ -78,6 +80,7 @@ p {
   margin-bottom: 2rem;
 }
 
+/* Join button */
 .cta-button {
   background: var(--button-bg-light);
   color: var(--button-text);
@@ -88,6 +91,7 @@ p {
   font-weight: bold;
   font-size: 1.1rem;
   transition: background 0.3s;
+  cursor: pointer;
 }
 
 body.dark .cta-button {
@@ -98,6 +102,21 @@ body.dark .cta-button {
   background: #00acc1;
 }
 
+/* Notification under the button */
+.copy-notification {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #00e0ff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: relative;
+}
+
+.copy-notification.show {
+  opacity: 1;
+}
+
+/* Theme toggle button */
 .theme-toggle {
   position: absolute;
   top: 1rem;
@@ -107,11 +126,12 @@ body.dark .cta-button {
   z-index: 2;
 }
 
+/* Footer */
 footer {
   position: absolute;
   bottom: 1rem;
   width: 100%;
   text-align: center;
-  color: var(--text-color-dark);
   z-index: 1;
+  color: var(--text-color-dark);
 }
