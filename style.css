@@ -36,9 +36,10 @@ body.light {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
-  backdrop-filter: blur(5px); /* Same blur for both modes */
+  z-index: -1; /* Make sure it's BELOW content */
+  backdrop-filter: blur(5px);
 }
+
 
 /* Dark mode overlay */
 body.dark .overlay {
