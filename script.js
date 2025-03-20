@@ -1,28 +1,46 @@
-// Check for saved theme in localStorage on page load
+// Load saved theme or default to dark
 document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
+  const body = document.body;
+  const toggleIcon = document.querySelector(".theme-toggle");
+
   if (savedTheme) {
-    document.body.classList.add(savedTheme);
+    body.classList.remove("light", "dark");
+    body.classList.add(savedTheme);
+    toggleIcon.textContent = savedTheme === "light" ? "☀️" : "🌙";
   } else {
-    // Default to dark mode if no saved preference
-    document.body.classList.add('dark');
+    body.classList.add("dark");
+    toggleIcon.textContent = "🌙";
   }
 });
 
-// Toggle between dark and light modes
+// Toggle light/dark theme
 function toggleTheme() {
   const body = document.body;
   const icon = document.querySelector(".theme-toggle");
 
-  if (body.classList.contains('dark')) {
-    body.classList.remove('dark');
-    body.classList.add('light');
+  if (body.classList.contains("dark")) {
+    body.classList.remove("dark");
+    body.classList.add("light");
     icon.textContent = "☀️";
-    localStorage.setItem("theme", "light"); // Save light mode in localStorage
+    localStorage.setItem("theme", "light");
   } else {
-    body.classList.remove('light');
-    body.classList.add('dark');
+    body.classList.remove("light");
+    body.classList.add("dark");
     icon.textContent = "🌙";
-    localStorage.setItem("theme", "dark"); // Save dark mode in localStorage
+    localStorage.setItem("theme", "dark");
   }
+}
+
+// Copy server IP to clipboard with custom notification
+function copyIP() {
+  const ip = "play.axosmp.fun";
+  navigator.clipboard.writeText(ip).then(() => {
+    const notification = document.getElementById("copy-notification");
+    notification.classList.add("show");
+
+    setTimeout(() => {
+      notification.classList.remove("show");
+    }, 2000);
+  });
 }
