@@ -32,8 +32,15 @@ body {
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.2); /* just a light tint */
-  backdrop-filter: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0) 70%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  backdrop-filter: blur(3px);
+  pointer-events: none;
   z-index: 0;
 }
 
