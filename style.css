@@ -11,7 +11,7 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: url('images/background.jpg') no-repeat center center fixed;
+  background: url('images/background.png') no-repeat center center fixed;
   background-size: cover;
   color: var(--text-color-light);
   transition: background-color 0.3s ease, color 0.3s ease;
