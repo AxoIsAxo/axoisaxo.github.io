@@ -1,5 +1,18 @@
+// Set dark mode by default on page load
+document.body.classList.add('dark');
+
+// Toggle between dark and light modes
 function toggleTheme() {
-  document.body.classList.toggle("dark");
+  const body = document.body;
   const icon = document.querySelector(".theme-toggle");
-  icon.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+  
+  if (body.classList.contains('dark')) {
+    body.classList.remove('dark');
+    body.classList.add('light');
+    icon.textContent = "☀️";
+  } else {
+    body.classList.remove('light');
+    body.classList.add('dark');
+    icon.textContent = "🌙";
+  }
 }
