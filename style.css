@@ -32,8 +32,8 @@ body {
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.4); /* lighter overlay */
-  backdrop-filter: blur(1px); /* subtle blur */
+  background-color: rgba(255, 255, 255, 0.2); /* just a light tint */
+  backdrop-filter: none;
   z-index: 0;
 }
 
