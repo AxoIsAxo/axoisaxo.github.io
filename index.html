@@ -3,21 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AxoSMP - Home</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>AxoSMP</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="dark">
   <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+
   <div class="overlay"></div>
 
-  <main class="content">
+  <div class="content">
     <h1>Welcome to AxoSMP</h1>
-    <p>A community-driven Minecraft SMP with an aquatic twist 🐟</p>
-    <a href="#join" class="cta-button">Join the Server</a>
-  </main>
+    <p>Your aquatic Minecraft adventure awaits!</p>
+
+    <button class="cta-button" onclick="copyIP()">Join</button>
+    <div id="copy-notification" class="copy-notification">Copied to clipboard!</div>
+  </div>
 
   <footer>
-    <p>&copy; 2025 AxoSMP. Swim with the axolotls!</p>
+    &copy; 2025 AxoSMP. Swim with the axolotls.
   </footer>
 
   <script src="script.js"></script>
