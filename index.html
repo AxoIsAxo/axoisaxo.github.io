@@ -5,11 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AxoSMP</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Style for the tabs */
+    .tabs {
+      display: flex;
+      justify-content: center; /* Center the tabs */
+      margin-bottom: 20px; /* Add some space between tabs and content */
+      padding: 10px 0;
+      background-color: rgba(0, 0, 0, 0.1); /* Slightly darker background for visibility */
+      border-radius: 5px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      text-decoration: none;
+      color: var(--text-color-dark); /* Inherit text color */
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+      margin: 0 5px; /* Space between tabs */
+    }
+
+    .tab:hover {
+      background-color: rgba(0, 0, 0, 0.2); /* Darker background on hover */
+    }
+
+    body.light .tab {
+      color: var(--text-color-light);
+    }
+
+  </style>
 </head>
 <body class="dark">
+
   <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
 
   <div class="overlay"></div>
+
+  <!-- Tabs navigation -->
+  <div class="tabs">
+    <a href="team.html" class="tab">Team</a>
+    <a href="https://discord.axosmp.fun" class="tab" target="_blank">Discord</a>
+    <a href="https://store.axosmp.fun" class="tab" target="_blank">Store</a>
+  </div>
 
   <div class="content">
     <h1>Welcome to AxoSMP</h1>
@@ -17,12 +55,14 @@
 
     <button class="cta-button" onclick="copyIP()">Play</button>
     <div id="copy-notification" class="copy-notification">IP Copied to clipboard!</div>
+
   </div>
 
   <footer>
-    &copy; 2025 AxoSMP.
+    © 2025 AxoSMP.
   </footer>
 
   <script src="script.js"></script>
+
 </body>
 </html>
