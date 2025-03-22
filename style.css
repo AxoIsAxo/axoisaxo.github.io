@@ -191,3 +191,11 @@ body.light .textbox {
 body.light .textbox::placeholder {
   color: rgba(0, 0, 0, 0.3);
 }
+
+.suggestion-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* spacing between input, textarea, and button */
+  align-items: flex-start; /* keep left-aligned */
+  max-width: 600px; /* optional: keeps it from stretching too wide */
+}
