@@ -195,7 +195,7 @@ body.light .textbox::placeholder {
 .suggestion-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
   align-items: center;        /* center items horizontally */
   justify-content: center;    /* center items vertically (if needed) */
   margin: 2rem auto;          /* center the form itself */
