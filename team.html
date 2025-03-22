@@ -1,69 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Minecraft Server - Staff</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AxoSMP Rules</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="dark"> <!-- Set an initial dark theme as default -->
+<body class="dark">
 
-    <div class="overlay"></div>
+  <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
 
-    <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox">
-            <span class="slider round"></span>
-        </label>
-    </div>
+  <div class="overlay"></div>
 
-    <div class="tabs">
-        <a href="index.html" class="tab">Home</a>
-        <a href="staff.html" class="tab active">Staff</a>
-        <a href="#" class="tab">Rules</a>
-        <!-- Add more tabs as needed -->
-    </div>
+  <!-- Tabs navigation -->
+  <div class="tabs">
+    <a href="index.html" class="tab">Home</a>
+    <a href="team.html" class="tab">Team</a>
+    <a href="http://discord.axosmp.fun" class="tab" target="_blank">Discord</a>
+    <a href="http://store.axosmp.fun" class="tab" target="_blank">Store</a>
+  </div>
 
-    <div class="content">
-        <h1>Our Staff</h1>
-        <p>Meet the team that keeps our server running smoothly!</p>
+  <div class="content">
+    <h1>Server Rules</h1>
+    <p>Make sure to follow these rules to keep the server fun and safe for everyone!</p>
 
-        <div class="staff-container">
-            <div class="staff-card">
-                <img src="images/staff_avatar_1.png" alt="Staff Avatar">
-                <h3>OwnerName</h3>
-                <p>Owner & Head Admin</p>
-                <p>Responsible for overall server management and development.</p>
-            </div>
+    <ul style="text-align: left; max-width: 600px; margin: 2rem auto;">
+      <h3>AxoManYT / AxoIsAxo</h3>
+        <li>Owner</li>
+    </ul>
 
-            <div class="staff-card">
-                <img src="images/staff_avatar_2.png" alt="Staff Avatar">
-                <h3>AdminName</h3>
-                <p>Administrator</p>
-                <p>Helps with server administration and community support.</p>
-            </div>
+    <ul style="text-align: left; max-width: 600px; margin: 2rem auto;">
+      <h3>Schleimiger</h3>
+        <li>Head Admin</li>
+    </ul>
 
-            <div class="staff-card">
-                <img src="images/staff_avatar_3.png" alt="Staff Avatar">
-                <h3>ModName</h3>
-                <p>Moderator</p>
-                <p>Ensures a safe and enjoyable environment for all players.</p>
-            </div>
+    <ul style="text-align: left; max-width: 600px; margin: 2rem auto;">
+      <h3>PinkPigtails</h3>
+        <li>Builder</li>
+    </ul>
 
-            <!-- Add more staff cards here -->
-              <div class="staff-card">
-                <img src="images/staff_avatar_4.png" alt="Staff Avatar">
-                <h3>HelperName</h3>
-                <p>Helper</p>
-                <p>Helps users with any problems they might have.</p>
-            </div>
-        </div>
-    </div>
+<div class="content">
+  <h2>Suggestion Box</h2>
+  
+  <form action="https://formspree.io/f/mzzerznl" method="POST" class="suggestion-form">
+    <input type="text" name="discord" placeholder="Your Discord Username" class="textbox" required>
+    <textarea name="message" placeholder="Your suggestion..." class="textbox" rows="5" required></textarea>
+    <button type="submit" class="cta-button">Send Suggestion</button>
+  </form>
+</div>
 
 
-    <footer>
-        © 2024 Your Minecraft Server. All rights reserved.
-    </footer>
+  <footer>
+    © 2025 AxoSMP.
+  </footer>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
