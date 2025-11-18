@@ -63,9 +63,9 @@ a {
     border-color: rgba(141, 119, 130, 0.466);
     margin: 2em;
     padding: 1em;
-    text-align: left;
-    color: rgb(219, 219, 219);
     text-align: center;
+    color: rgb(219, 219, 219);
+    overflow: hidden;
 
 }
 
@@ -93,4 +93,18 @@ a {
 .textbox img {
     border-radius: 8px;
     border: 1px solid #e4c0e2;
+}
+
+.date {
+    float: right;
+    padding: 1em;
+}
+
+.date + br {
+    clear: both;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: bold;
 }
