@@ -16,6 +16,11 @@ body {
 
 }
 
+a {
+    color: rgb(68, 68, 68);
+    font-weight: bold;
+}
+
 .topleft a {
     padding: 0.2em;
     float: left;
