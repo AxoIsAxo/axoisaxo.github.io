@@ -17,8 +17,11 @@ body {
 }
 
 a {
-    color: rgb(68, 68, 68);
+    color: rgb(255, 255, 255);
     font-weight: bold;
+    text-decoration: none;
+    cursor:grab;
+    text-decoration: underline;
 }
 
 .topleft a {
@@ -84,7 +87,7 @@ a {
 .textbox li:hover {
     background-color: #8a8a8a36; /* dddddd36 */
     border-radius: 6px;
-    cursor: grab;
+    cursor:pointer;
 }
 
 .textbox img {
