@@ -130,10 +130,10 @@ a {
   animation-name: blinker;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  animation-duration: 1s;
+  animation-duration: 4s;
   /* Vendor prefix for older browsers (optional) */
   -webkit-animation-name: blinker;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-duration: 0.2s;
+  -webkit-animation-duration: 4s;
 }
