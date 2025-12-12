@@ -110,30 +110,35 @@ a {
 }
 
  /* god this is stupid :sob: */
-
-@keyframes blinker {
-  0%   { color: red;
-         float: left;
-       }
-  24%  { color: red; }   /* Hold red for ~1s */
-  25%  { color: yellow; }
-  49%  { color: yellow; } /* Hold yellow for ~1s */
-  50%  { color: red; }
-  74%  { color: red; 
-         float: right;
-       }   /* Hold red for ~1s */
-  75%  { color: green; }
-  100% { color: green; }  /* Hold green for ~1s */
+@keyframes color-cycle {
+  0% {
+    color: #FF0000;
+  }
+  16.66% {
+    color: #F6FF00;
+  }
+  33.33% {
+    color: #15FF00;
+  }
+  50% {
+    color: #00EEFF;
+  }
+  66.66% {
+    color: #0015FF;
+  }
+  83.33% {
+    color: #FF00FB;
+  }
+  100% {
+    color: #FF0000;
+  }
 }
 
-.waitingForConnection {
-  animation-name: blinker;
+.rainbow-text {
+  font-size: 40px;
+  font-weight: bold;
+  animation-name: color-cycle;
+  animation-duration: 6s; 
   animation-iteration-count: infinite;
-  animation-timing-function: step-end; /* Snap to each color */
-  animation-duration: 4s;
-  /* Vendor prefix for older browsers (optional) */
-  -webkit-animation-name: blinker;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: step-end;
-  -webkit-animation-duration: 4s;
+  animation-timing-function: linear; 
 }
