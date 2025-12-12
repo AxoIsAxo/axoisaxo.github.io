@@ -113,10 +113,12 @@ a {
 
 @-webkit-keyframes blinker {
   from {
-    opacity: 1.0
+    opacity: 1.0;
+    color: red;
     }
   to { 
-    opacity: 0.0; 
+    opacity: 0.0;
+    color: green:
     }
 }
 
