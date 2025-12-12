@@ -113,16 +113,16 @@ a {
 
 @keyframes blinker {
   0% {
-    opacity: 1.0;
     color: red;
   }
-  50% {
-    opacity: 0.0;
+  25% {
     color: yellow;
   }
-  100% {
-    opacity: 1.0;
+  50% {
     color: red;
+  }
+  100% {
+    color: green;
   }
 }
 
