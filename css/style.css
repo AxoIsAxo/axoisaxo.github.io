@@ -112,8 +112,12 @@ a {
  /* god this is stupid :sob: */
 
 @-webkit-keyframes blinker {
-  from { opacity: 1.0; }
-  to { opacity: 0.0; }
+  from {
+    opacity: 1.0
+    }
+  to { 
+    opacity: 0.0; 
+    }
 }
 
 .waitingForConnection {
