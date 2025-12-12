@@ -116,24 +116,28 @@ a {
     color: red;
   }
   25% {
-    color: yellow;
+    color: red; /* Hold red for 1s */
   }
   50% {
-    color: red;
+    color: yellow; /* Hold yellow for 1s */
+  }
+  75% {
+    color: red; /* Hold red for 1s */
   }
   100% {
-    color: green;
+    color: green; /* Hold green for 1s */
   }
 }
 
 .waitingForConnection {
   animation-name: blinker;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: step-end; /* Snap to each color */
   animation-duration: 4s;
   /* Vendor prefix for older browsers (optional) */
   -webkit-animation-name: blinker;
   -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: step-end;
   -webkit-animation-duration: 4s;
 }
+
