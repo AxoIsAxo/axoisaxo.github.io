@@ -112,12 +112,16 @@ a {
  /* god this is stupid :sob: */
 
 @keyframes blinker {
-  0%   { color: red; }
+  0%   { color: red;
+         float: left;
+       }
   24%  { color: red; }   /* Hold red for ~1s */
   25%  { color: yellow; }
   49%  { color: yellow; } /* Hold yellow for ~1s */
   50%  { color: red; }
-  74%  { color: red; }   /* Hold red for ~1s */
+  74%  { color: red; 
+         float: right;
+       }   /* Hold red for ~1s */
   75%  { color: green; }
   100% { color: green; }  /* Hold green for ~1s */
 }
