@@ -111,26 +111,13 @@ a {
 
  /* god this is stupid :sob: */
 
-@-webkit-keyframes blinker {
-  from {
-    opacity: 1.0;
-    color: red;
-    }
-  to { 
-    opacity: 0.0;
-    }
-  to { 
-    opacity: 1.0;
-    color: yellow;
-    }
-  to { 
-    opacity: 0.0;
-    }
+@keyframes blinker { /* Standard */
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
 }
 
 .waitingForConnection {
-  -webkit-animation-name: blinker;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
-  -webkit-animation-duration: 1.7s;
+  animation: blinker 0.2s infinite ease-in-out; /* Standard */
 }
+
