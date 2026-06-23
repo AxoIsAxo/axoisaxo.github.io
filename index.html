@@ -7,20 +7,26 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="topnav">
-        <div class="topleft">
-            <a href="portfolio.html">portfolio.desktop</a>
-            <a href="social.html">social.desktop</a>
-            <a href="news.html">news.desktop</a>
-        </div>
+
+    <div class="box">
+        <h1>AxoIsAxo</h1>
+        <p>Name: AxoIsAxo</p>
+        <p>Pronouns: He/Him</p>
+        <p>Interests: Politics, Linux, Gamedev</p>
+        <audio id="bg-audio" controls autoplay>
+            <source src="/files/audio/background.mp3" type="audio/mpeg">
+        </audio>
     </div>
-    <div class="textbox">
-        <h1>README.md</h1>
-        <p>I like sugar beets</p>
-        <img src="img/axolotl.webp" width="500px" alt="an image of a super cute axolotl thing">
-        <p>Lol im bored rn</p>
-        <p>This site is boring too I could add eye cancer causing flashinf lights everywhere w´how would that be? </p>
-        <div class="rainbow-text"><p>:D</p></div>
-    </div>
+
+    <video autoplay loop muted playsinline id="bg-video">
+    <source src="files/background/city.mp4" type="video/mp4">
+    </video>
 </body>
+
+<script>
+    document.addEventListener('click', () => {
+        document.getElementById('bg-audio').play();
+    }, { once: true });
+</script>
+
 </html>
