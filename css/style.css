@@ -38,6 +38,11 @@ body {
     text-decoration-line: overline underline;
 }
 
+.badges img {
+    width: 32px;
+    height: 32px;
+}
+
 #bg-video {
   position: fixed;
   top: 0;
